@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <template id="pemesanan_detail">
+            <t t-call="website.layout">
+                <div class="container mt16">
+                    <h1>Detail Pemesanan</h1>
+                    <table class="table">
+                        <tr>
+                            <th>Nomor Pemesanan</th>
+                            <td><t t-esc="pemesanan.nomor_pemesanan"/></td>
+                        </tr>
+                        <tr>
+                            <th>Nama Pemesan</th>
+                            <td><t t-esc="pemesanan.nama_pemesanan"/></td>
+                        </tr>
+                        <tr>
+                            <th>Ruangan</th>
+                            <td><t t-esc="pemesanan.ruangan_id.name"/></td>
+                        </tr>
+                        <tr>
+                            <th>Tanggal Pemesanan</th>
+                            <td><t t-esc="pemesanan.tanggal_pemesanan"/></td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td><t t-esc="pemesanan.status_pemesanan"/></td>
+                        </tr>
+                        <tr>
+                            <th>Catatan</th>
+                            <td><t t-esc="pemesanan.catatan_pemesanan"/></td>
+                        </tr>
+                    </table>
+                    <a class="btn btn-secondary" href="/ruangan_booking/pemesanan">Kembali ke Daftar Pemesanan</a>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

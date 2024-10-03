@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <template id="create_pemesanan">
+            <t t-call="website.layout">
+                <div class="container mt16">
+                    <h1>Buat Pemesanan Baru</h1>
+                    <form action="/ruangan_booking/create" method="POST">
+                        <div class="form-group">
+                            <label for="nomor_pemesanan">Nomor Pemesanan</label>
+                            <input type="text" class="form-control" name="nomor_pemesanan" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="ruangan_id">Pilih Ruangan</label>
+                            <select class="form-control" name="ruangan_id" required>
+                                <t t-foreach="ruangan_list" t-as="ruangan">
+                                    <option value="<t t-esc='ruangan.id'/>"><t t-esc='ruangan.name'/></option>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama_pemesanan">Nama Pemesan</label>
+                            <input type="text" class="form-control" name="nama_pemesanan" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggal_pemesanan">Tanggal Pemesanan</label>
+                            <input type="date" class="form-control" name="tanggal_pemesanan" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="catatan_pemesanan">Catatan</label>
+                            <textarea class="form-control" name="catatan_pemesanan"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Buat Pemesanan</button>
+                    </form>
+                    <a class="btn btn-secondary" href="/ruangan_booking/pemesanan">Kembali ke Daftar Pemesanan</a>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
